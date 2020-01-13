@@ -8,7 +8,9 @@
 
 2️⃣ 새로운 Storyboard 파일의 ViewController에 `is Initial View Controller` 을 지정해준다. (❌ 필수는 아닌 것 같은데 일단 지정)
 
-<img src="./images/storyboard1.png" height="300px"/>
+<img src="./images/storyboard1.png" height="300px"/>  
+
+
 
 3️⃣ **StoryBoard ID**로 화면을 전환하기 때문에 다음과 같이 체크하고 ID을 지정해준다.
 
