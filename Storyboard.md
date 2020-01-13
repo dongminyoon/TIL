@@ -2,12 +2,6 @@
 
 
 
-🔵 **프로젝트 시작 시 Storyboard 지정하기**
-
-
-
-
-
 🔵 **Storyboard 이용 전환**
 
 1️⃣ 새로운 Storyboard 파일을 만든다.
