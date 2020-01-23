@@ -9,8 +9,6 @@
 * **iTerm2**
 * **zsh, oh-my-zsh shell**
 
-<br>
-
 ***
 
 ✅ **iTerm2**
@@ -20,7 +18,7 @@
 1. **[iTerm2 설치](https://iterm2.com/)** 홈페이지로 들어가서 설치
 2. **homebrew** 설치 후, `brew cask install iterm2` 명령어 실행
 
-<br><br>
+<br>
 
 🔵 **iTerm2 테마 적용**
 
@@ -32,8 +30,6 @@
 
 2. 우측 하단의 `Color Presets...` 메뉴의 `Import`항목을 선택 후,  다운받은 iTerm2 테마를 선택한다. 다운받은 테마란 *Schemes*의 ***.itemcolors*** 확장자로 된 파일이다.
 3. `Import`가 완료된 후, `Color Presets...`메뉴에서 import한 테마를 선택한다.
-
-<br><br>
 
 ***
 
@@ -60,7 +56,7 @@ brew install zsh zsh-completions
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-<br><br>
+<br>
 
 🔵 **oh-my-zsh 플러그인 설정**
 
@@ -107,8 +103,6 @@ plugins=(
 
 <br>
 
-<br>
-
 🔵 **oh-my-zsh 테마 적용**
 
  초기에 `oh-my-zsh`을 설치하면 `robbyrussell`로 적용이 되어있다. 다른 테마로 바꾸기 위해서 방법을 알아볼 것이다.
@@ -137,8 +131,6 @@ plugins=(
 
 <br>
 
-<br>
-
 🔵 **PROMPT 설정**
 
  Terminal을 사용하다보면 `yundongmin@yundongmin-ui-Macbook-Pro`와 같은 부분이 Shell앞에 표시되어 불편하다. 이 부분을 ***prompt***라고 부른다. 이 부분을 수정하기 위한 작업이있다.
@@ -161,8 +153,6 @@ prompt_context() {}
 	3. 설정이 완료되었으면 `source ~/.zshrc`로 재실행시킨다.
 
 ![prompt](../images/promptZsh.png)
-
-<br>
 
 <br>
 
