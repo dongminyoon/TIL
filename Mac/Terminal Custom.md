@@ -1,7 +1,5 @@
 ## Mac 초기 셋팅
 
-<br>
-
 #### **Terminal 커스텀 하기**
 
  맥의 CLI인 **Terminal**을 커스텀 해보자.
