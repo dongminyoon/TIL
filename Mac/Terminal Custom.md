@@ -15,14 +15,12 @@
 
 ✅ **iTerm2**
 
-<br>
-
 🔵 **iTerm2 설치방법 2가지**
 
 1. **[iTerm2 설치](https://iterm2.com/)** 홈페이지로 들어가서 설치
 2. **homebrew** 설치 후, `brew cask install iterm2` 명령어 실행
 
-<br>
+<br><br>
 
 🔵 **iTerm2 테마 적용**
 
@@ -35,7 +33,7 @@
 2. 우측 하단의 `Color Presets...` 메뉴의 `Import`항목을 선택 후,  다운받은 iTerm2 테마를 선택한다. 다운받은 테마란 *Schemes*의 ***.itemcolors*** 확장자로 된 파일이다.
 3. `Import`가 완료된 후, `Color Presets...`메뉴에서 import한 테마를 선택한다.
 
-<br>
+<br><br>
 
 ***
 
@@ -43,11 +41,11 @@
 
  Mac OS의 Terminal 기본 Shell은 `Bash(Bourne-again)`이다. 이것을 `zsh Shell`로 바꾸어줄 것이다. 우선 ***Homebrew***을 설치하여 준다.
 
-**방법**
+**zsh, oh-my-zsh 설치 방법**
 
 1. ***[HomeBrew](https://brew.sh/index_ko)*** 홈페이지에 접속하여 설치하는 법을 보고 따라한다.
 
-> ➡️ ***Homebrew란?*** 맥북의 패키지 관리자. 즉, 원하는 프로그램들을 명령어로 쉽게 설치하고 삭제하고 업데이트할 수 있게 도와준다.
+> 👉 ***Homebrew란?*** 맥북의 패키지 관리자. 즉, 원하는 프로그램들을 명령어로 쉽게 설치하고 삭제하고 업데이트할 수 있게 도와준다.
 
 2. ***Homebrew***설치가 완료되었으면 `zsh`을 설치하여 준다.
 
@@ -61,6 +59,83 @@ brew install zsh zsh-completions
 ```shell
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
+
+<br><br>
+
+🔵 **oh-my-zsh 플러그인 설정**
+
+ oh-my-zsh의 좋은 기능은 zsh shell의 플러그인 설정등에 있다. 여기서 자주 사용하는 2가지의 플러그인을 설치해볼 것이다.
+
+* `zsh-syntax-highlighting` : 명령어 하이라이팅 기능을 가진 플러그인
+* `zsh-autosuggestions` : 명령어 자동완성 기능을 가진 플러그인
+
+1. ***plug-in***을 설치
+
+```shell
+# zsh-syntax-highlighting 기능 설치
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+# zsh-autosuggestions 플러그인 설치
+git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
+```
+
+2. 설치 후, `zsh` 파일에 설정이 필요하다. `zsh`설정을 위해서는 `~/.zshrc` 파일을 설정하여야 한다.
+
+```shell
+# ~/.zshrc 파일 vi 에디터로 실행
+vi ~/.zshrc
+
+# 파일이 열리고 난 후, 밑의 코드 추가
+plugins=(
+  git
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+)
+```
+
+3. 설정이 완료되고 설정을 적용하기 위해서 `source ~/.zshrc` 명령어로 설정을 다시 불러온다.
+
+<br>
+
+**설정 완료 화면**
+
+* ***zsh-syntax-highlighting*** : 알 수 없는 명령어에는 빨간색으로 **highlighting**이 적용되고, 완성된 명령어에는 초록색으로 **highlighting**이 적용된다.
+* ***zsh-autosuggestions*** : 이전에 입력을 했던 명령어나 비슷한 명령어 중에 사용자가 사용할 것 같은 명령어를 자동 추천해준다. 추천해주는 부분은 연한 회색으로 표시된다. 사용을 위해 회색이 표시되었을 때, 키보드 → 을 눌러준다. 
+
+![auto](../images/zshAuto.png)
+
+<br>
+
+<br>
+
+🔵 **oh-my-zsh 테마 적용**
+
+ 초기에 `oh-my-zsh`을 설치하면 `robbyrussell`로 적용이 되어있다. 다른 테마로 바꾸기 위해서 방법을 알아볼 것이다.
+
+1. `vi ~/.zshrc`로 zsh 설정파일을 열어준다.
+2. 파일 내용 중, `ZSH_THEME="robyrussell"`로 된 부분을 찾아서 원하는 테마로 수정해준다. ***agnoster*** 테마로 적용하였다. 켜질 때마다 새로운 것을 원하는 사람은 ***random***으로 적용하면 된다. 
+3. 완료된 설정을 적용하기 위해 `source ~/.zshrc`을 실행시킨다.
+
+<br>
+
+❗️ 여기서 테마는 성공적으로 적용되지만 폰트가 깨지는 모습을 볼 수 있다. 이를 해결하기 위해, 폰트를 적용해주어야 한다.
+
+ 여기서는 ***D2CodingFont***을 사용하였다. 원하는 폰트가 있을 시, 자유롭게 다운하여 설정하면 된다. 우선 ***D2CodingFont*** 적용을 위한 방법을 알려주겠다.
+
+👉 [D2CodingFont](https://github.com/naver/d2codingfont) 다운을 위해 다음 링크로 들어가 최신으로 설치한다.
+
+👉 MacBook의 **서체관리자**을 열어서 다운받은 폰트를 추가하여 준다.
+
+<br>
+
+ 이제 ***iTerm2***에 해당 서체를 적용하여야한다. `⌘(command) + ‚`을  눌러 설정 창을 열어준다. 설정 창의 ***Text*** 메뉴를 클릭하여 들어간다.
+
+<img src="../images/iTerm2Font.png" height="400px"/>
+
+ 이후, **서체관리자**에 추가하였던 폰트를 우측하단에서 선택하여준다. 이후 설정을 종료하면 해당 폰트가 적용된 것을 볼 수 있다.
+
+<br>
 
 <br>
 
@@ -86,6 +161,8 @@ prompt_context() {}
 	3. 설정이 완료되었으면 `source ~/.zshrc`로 재실행시킨다.
 
 ![prompt](../images/promptZsh.png)
+
+<br>
 
 <br>
 
