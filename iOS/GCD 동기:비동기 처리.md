@@ -20,6 +20,38 @@
 >
 >👉 ***커스텀 Dispatch Queue*** : 위의 두 Dispatch Queue 이외에 본인이 직접 설정하고 Dispatch Queue을 만들 수 있다.
 
+---
+
+❗️**중요한 점**❗️
+
+Serial / Concurrent와 sync / async 의 차이가 헷갈리 수 있다. 하지만 둘은 엄연히 다르다.
+
+직렬과 병렬은 한번에 하나만 처리하는지 동시에 여러개를 처리하는지이다.
+
+동기와 비동기는 처리가 끝날때가지 기다리느냐 지시만하고 다른 처리를 하느냐이다.
+
+즉 직렬이면서 비동기 일수도 있고, 병렬인데 동기 일수도 있다!!
+
+---
+
+<br>
+
+***Global Queue***에서는  Queue에서 먼저 처리할 우선순위를 정할 수 있게 `qos(Quality of service)`을 제공해준다.
+
+**QOS 우선순위**
+
+> 1️⃣ userInteractive
+>
+> 2️⃣ userInitated
+>
+> 3️⃣ default
+>
+> 4️⃣ utility
+>
+> 5️⃣ background
+>
+> 6️⃣ unspecified
+
 <br>
 
 **커스텀 Dispatch Queue**
