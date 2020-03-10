@@ -24,7 +24,7 @@
 
 ❗️**중요한 점**❗️
 
-Serial / Concurrent와 sync / async 의 차이가 헷갈리 수 있다. 하지만 둘은 엄연히 다르다.
+Serial / Concurrent와 sync / async 의 차이가 헷갈릴 수 있다. 하지만 둘은 엄연히 다르다.
 
 직렬과 병렬은 한번에 하나만 처리하는지 동시에 여러개를 처리하는지이다.
 
