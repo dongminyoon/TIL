@@ -18,6 +18,26 @@ TableView, CollectionView을 밑으로 드래그 후 놓았을 때, 새로고침
 
 <br>
 
+***UIControl.Event 종류***
+
+👉 touchDown : 컨트롤을 터치했을 때 발생
+
+👉 touchDownRepeat : 컨트롤을 연속 터치할 때 발생하는 이벤트
+
+👉 touchDragInside : 컨트롤 범위 내에서 터치한 영역을 드래그 할 때 발생하는 이벤트
+
+👉 touchDragOutside : 터치 영역이 컨트롤의 바깥쪽에서 드래그 할 때 발생하는 이벤트
+
+👉 touchDragEnter : 터치 영역이 컨트롤의 일정 영역 바깥쪽으로 나갔다가 다시 들어왔을 때 발생하는 이벤트
+
+👉 touchDragExit : 터치 영역이 컨트롤의 일정 영역 바깥쪽으로 나갔을 때 발생하는 이벤트
+
+👉 touchCancel : 터치를 취소하는 이벤트
+
+👉 valueChanged : 터치를 드래그 및 다른 방법으로 조작하여 값이 변경되었을 때 발생하는 이벤트
+
+<br>
+
 1️⃣ `UIRefreshControl` 객체 생성
 
 ```swift
