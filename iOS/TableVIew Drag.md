@@ -68,7 +68,4 @@ extension ViewController: UITableViewDataSource {
 }
 ```
 
-
-
-
-
+<br>
