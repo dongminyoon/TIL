@@ -22,9 +22,9 @@
 
 iOS 개발환경의 터치 기반의 어플리케이션을 제작하기 위한 도구들의 모음이다. 
 
-<img src="../images/iOSLayer.png" height="250px"/>
+<center><img src="../images/iOSLayer.png" height="250px"/></center>
 
-<center>[Cocoa Touch Framework]</Cocoa></center>
+<center>[Cocoa Touch Framework]</center>
 
 1. `Cocoa Touch` 
 
