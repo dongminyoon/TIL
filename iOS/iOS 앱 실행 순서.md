@@ -4,7 +4,7 @@
 
 ### 앱 실행 프로세스
 
-<img src="../images/iOSProccess.png" height="300px"/>
+<center><img src="../images/iOSProccess.png" height="300px"/></center>
 
 1. 앱 실행
 2. ***UIApplication*** 객체 생성 (싱글톤 객체 - 앱에 하나만 존재)

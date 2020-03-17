@@ -39,7 +39,7 @@ class LoadingService {
   // 애니메이션을 담당할 팝업 뷰
   private var popupView: UIImageView?
   
-  // 애니메이션의 시작을 관리하는 메소드
+	// 애니메이션의 시작을 관리하는 메소드
 	func show() {}
   
   // 애니메이션의 정지를 관리하는 메소드
