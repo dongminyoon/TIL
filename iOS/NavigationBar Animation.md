@@ -1,4 +1,4 @@
-## Navigation Bar Animation
+## Navigation Bar 활용
 
 <br>
 
