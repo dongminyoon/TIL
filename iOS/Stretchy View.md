@@ -53,7 +53,7 @@
 
 <br>
 
-✅ `UICollectionVIew.contentInsetAdjustmentBehavior` Option
+✅ `UICollectionView.contentInsetAdjustmentBehavior` Option
 
 ❗️옵션의 조정을 통해 UICollectionView의 Safe Area에 따른 UIEdgeInset을 조정할 수 있다❗️
 
@@ -72,6 +72,12 @@
 ***UICollectionViewFlowLayout 사용***
 
 ❗️지금까지의 DataSource, Delegate와 다르게 **Protocol** 타입이 아니다❗️
+
+`UICollectionViewDelegateFlowLayout` Protocol에는 UICollectionViewFlowLayout과 상호작용하여 레이아웃을 조정할 수 있는 메소드가 정의되어 있다.
+
+👉 `itemSize: CGSize`
+
+> 이 프로퍼티의 설정을 통해 CollectionView의 Cell에 모두 같은 크기의 적용이 가능하다.
 
 👉 **`UICollectionViewFlowLayout.layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes?]`**
 
