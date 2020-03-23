@@ -2,7 +2,7 @@
 
 <br>
 
-***TableView ContentOffset에 따라 동적으로 Header가 변하는 뷰***
+***TableView contentOffset.y에 따라 동적으로 Header가 변하는 뷰***
 
 <br>
 
