@@ -4,7 +4,7 @@
 
 ***ScrollView의 ContentInsetAdjustmentBehavior을 공부하다 발견***
 
- 두 변수 모두 ScrollView의 프로퍼티로 있는 속성이다. ContentInset과 관련된 속성들이다.
+ 두 변수 모두 ScrollView의 프로퍼티로 있는 속성이다. Content Inset과 관련된 속성들이다.
 
 <br>
 
