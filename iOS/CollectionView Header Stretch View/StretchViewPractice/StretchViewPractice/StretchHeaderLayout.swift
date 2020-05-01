@@ -4,7 +4,6 @@
 //
 //  Created by 윤동민 on 2020/03/20.
 //  Copyright © 2020 윤동민. All rights reserved.
-//
 
 import UIKit
 
@@ -20,6 +19,7 @@ class StretchHeaderLayout: UICollectionViewFlowLayout {
                 let width = collectionView.frame.width
                 let height = attributes.frame.height - contentOffsetY
                 attributes.frame = CGRect(x: 0, y: contentOffsetY, width: width, height: height)
+                
             }
         }
         return layoutAttributes
