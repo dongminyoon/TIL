@@ -87,9 +87,10 @@ extension CustomTabbar: UICollectionViewDelegate {
         selectedIndex = indexPath
         guard let attribute = tabbarCollectionView.layoutAttributesForItem(at: selectedIndex) else { return }
         indicatorLeadingConstraint.constant = attribute.frame.origin.x - collectionView.contentOffset.x
-        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
             self.layoutIfNeeded()
         }, completion: nil)
+        delegate?.scrollTo(selectedIndex: selectedIndex)
     }
 }
 

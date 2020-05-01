@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CustomTabbarDelegate {
-    
+    func scrollTo(selectedIndex: IndexPath)
 }
 
 class ViewController: UIViewController {
@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setCollectionView()
+        customTabbarViews.delegate = self
     }
     
     private func setCollectionView() {
@@ -42,14 +43,6 @@ extension ViewController: UICollectionViewDataSource {
 }
 
 extension ViewController: UICollectionViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        customTabbarViews.form { tabbarCollectionView, leadingConstraint, selectedIndex in
-            let proportion = tabbarCollectionView.contentSize.width / 5
-            
-//            leadingConstraint.constant =
-        }
-    }
-    
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
@@ -67,5 +60,11 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+}
+
+extension ViewController: CustomTabbarDelegate {
+    func scrollTo(selectedIndex: IndexPath) {
+        contentCollectionView.scrollToItem(at: selectedIndex, at: .centeredHorizontally, animated: true)
     }
 }
