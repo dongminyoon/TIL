@@ -8,6 +8,8 @@
 
 <br>
 
+<br>
+
 🔵 **CocoaPods**의  `SocketIO`을 이용하여 구현한다.
 
 > 1️⃣ 프로젝트 폴더 이동 `$pod init`
