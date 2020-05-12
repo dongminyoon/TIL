@@ -9,7 +9,7 @@
 |           \d            |        Any Digit         |
 | :---------------------: | :----------------------: |
 |           \D            | Any Non-digit Character  |
-|            .            |   Any Singe Character    |
+|            .            |   Any Single Character   |
 |          [abc]          |       Only a, b, c       |
 |         [^dmp]          |      Not d, m nor p      |
 |          [a-z]          |     Character a to z     |
