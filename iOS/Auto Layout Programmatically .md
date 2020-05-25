@@ -49,3 +49,44 @@ class ViewController: UIViewController {
 
 ```
 
+<br>
+
+<br>
+
+***AutoLayout 배열로 잡기***
+
+ 동적으로 바뀔 Constraints을 위해 AutoLayout을 잡기 위해 **배열**로 적용
+
+ Constraint을 을 배열에 넣고 이를 한 번에 activate시키고 deactive시키면서 적용한다.
+
+<br>
+
+ 여기서 AutoLayout을 코드로 잡을 때, 중요한 점이 있다. 하나의 Constraint가 잡혀있는 상태에서 그 Constraint을 **deactive**하지 않고 새로운 Constraints을 **active** 할 시, Constraints가 중복으로 적용되는 것을 알 수 있다.
+
+ 즉, 새로운 Constraints을 잡을 시, 기존의 Constraints을 **deactive**해준 후, 새롭게 **active**해주는 작업이 필요하다.
+
+<br>
+
+✔️ 예시코드
+
+```swift
+private var newConstaints: [NSLayoutConstraint] = []
+
+private func setConstraints() {
+  let leadingConstraint = customView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
+  let trailingConstraint = customView.trailingAnchor.constarint(equalTo: self.view.trailingAnchor)
+  let bottomConstraint = customView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+  let topConstraint = customView.topAnchor.constraint(equalTo: self.view.topAnchor)
+  
+  newConstraints = [leadingConstraint, trailingConstraint, bottomConstraint, topConstraint]
+  NSLayoutConstraint.deactive(oldConstraints)
+  NSLayoutConstraint.activate(newConstraints)
+}
+```
+
+
+
+
+
+
+
