@@ -17,9 +17,11 @@ class CustomTabbar: UIView {
     
     var delegate: CustomTabbarDelegate?
         
-//    private var indicatorLeadingConstraint: NSLayoutConstraint!
+    private var indicatorLeadingConstraint: NSLayoutConstraint!
     private let itemSpacing: CGFloat = 10
     private var selectedIndex: IndexPath = IndexPath(row: 0, section: 0)
+    
+    private var customConstraints: [NSLayoutConstraint] = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -52,11 +54,9 @@ class CustomTabbar: UIView {
     
     private func setConstraint() {
         indicatorView.translatesAutoresizingMaskIntoConstraints = false
-//        indicatorLeadingConstraint = indicatorView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
-//        indicatorLeadingConstraint.isActive = true
-        indicatorView.leadingAnch
-        indicatorView.leadingAnchor.constraint(equalTo: cell.leadingAnchor).isActive = true
-        indicatorView.trailingAnchor.constraint(equalTo: cell.trailingAnchor).isActive = true
+        indicatorLeadingConstraint = indicatorView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
+        customConstraints.append(indicatorLeadingConstraint)
+        NSLayoutConstraint.activate(customConstraints)
         
         indicatorView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         indicatorView.widthAnchor.constraint(equalToConstant: self.view.bounds.width/4).isActive = true
@@ -77,23 +77,21 @@ extension CustomTabbar: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let labelCell = collectionView.dequeueReusableCell(withReuseIdentifier: LabelCell.identifier, for: indexPath) as? LabelCell else { return UICollectionViewCell() }
         labelCell.setIndex(indexPath.row)
-        
         return labelCell
     }
-    
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        guard let attribute = tabbarCollectionView.layoutAttributesForItem(at: selectedIndex) else { return }
-//        indicatorLeadingConstraint.constant = attribute.frame.origin.x - scrollView.contentOffset.x
-//    }
 }
 
 extension CustomTabbar: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         selectedIndex = indexPath
-//        guard let attribute = tabbarCollectionView.layoutAttributesForItem(at: selectedIndex) else { return }
-//
-//        indicatorLeadingConstraint.constant = attribute.frame.origin.x - collectionView.contentOffset.x
+        guard let cell = collectionView.cellForItem(at: selectedIndex) else { return }
+        NSLayoutConstraint.deactivate(customConstraints)
+        let leadingConstraint = indicatorView.leadingAnchor.constraint(equalTo: cell.leadingAnchor)
+        let trailingConstraint = indicatorView.trailingAnchor.constraint(equalTo: cell.trailingAnchor)
+        customConstraints = [leadingConstraint, trailingConstraint]
+        NSLayoutConstraint.activate(customConstraints)
+        
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
             self.layoutIfNeeded()
         }, completion: nil)
