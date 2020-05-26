@@ -10,9 +10,6 @@ import UIKit
 
 class LabelCell: UICollectionViewCell {
     static let identifier: String = "LabelCell"
-    override var description: String {
-        return "LabelCell"
-    }
     
     var pageLabel: UILabel = {
         let customLabel = UILabel()
@@ -31,8 +28,7 @@ class LabelCell: UICollectionViewCell {
     
     override var isSelected: Bool {
         willSet {
-            if newValue { pageLabel.textColor = .black }
-            else { pageLabel.textColor = .lightGray }
+            pageLabel.textColor = newValue ? .black : .lightGray
         }
     }
     

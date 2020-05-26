@@ -64,8 +64,11 @@ class CustomTabbar: UIView {
         indicatorView.backgroundColor = .green
     }
     
-    func form(form: (UICollectionView, NSLayoutConstraint, IndexPath) -> Void) {
-//        form(tabbarCollectionView, indicatorLeadingConstraint, selectedIndex)
+    func scrollScene(to page: Int) {
+        selectedIndex = IndexPath(row: page, section: 0)
+        tabbarCollectionView.selectItem(at: selectedIndex, animated: true, scrollPosition: [])
+        tabbarCollectionView.scrollToItem(at: selectedIndex, at: .centeredHorizontally, animated: true)
+        collectionView(tabbarCollectionView, didSelectItemAt: selectedIndex)
     }
 }
 
@@ -83,13 +86,14 @@ extension CustomTabbar: UICollectionViewDataSource {
 
 extension CustomTabbar: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         selectedIndex = indexPath
         guard let cell = collectionView.cellForItem(at: selectedIndex) else { return }
+        collectionView.scrollToItem(at: selectedIndex, at: .centeredHorizontally, animated: true)
         NSLayoutConstraint.deactivate(customConstraints)
-        let leadingConstraint = indicatorView.leadingAnchor.constraint(equalTo: cell.leadingAnchor)
-        let trailingConstraint = indicatorView.trailingAnchor.constraint(equalTo: cell.trailingAnchor)
-        customConstraints = [leadingConstraint, trailingConstraint]
+        customConstraints = [
+            indicatorView.leadingAnchor.constraint(equalTo: cell.leadingAnchor),
+            indicatorView.trailingAnchor.constraint(equalTo: cell.trailingAnchor)
+        ]
         NSLayoutConstraint.activate(customConstraints)
         
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {

@@ -49,7 +49,7 @@ extension ViewController: UICollectionViewDelegate {
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let page = Int(targetContentOffset.pointee.x / scrollView.frame.width)
-        
+        customTabbarViews.scrollScene(to: page)
     }
 }
 
