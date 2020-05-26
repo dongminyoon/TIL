@@ -17,7 +17,6 @@ class CustomTabbar: UIView {
     
     var delegate: CustomTabbarDelegate?
         
-    private var indicatorLeadingConstraint: NSLayoutConstraint!
     private let itemSpacing: CGFloat = 10
     private var selectedIndex: IndexPath = IndexPath(row: 0, section: 0)
     
@@ -54,8 +53,7 @@ class CustomTabbar: UIView {
     
     private func setConstraint() {
         indicatorView.translatesAutoresizingMaskIntoConstraints = false
-        indicatorLeadingConstraint = indicatorView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
-        customConstraints.append(indicatorLeadingConstraint)
+        customConstraints = [indicatorView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)]
         NSLayoutConstraint.activate(customConstraints)
         
         indicatorView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
@@ -66,8 +64,7 @@ class CustomTabbar: UIView {
     
     func scrollScene(to page: Int) {
         selectedIndex = IndexPath(row: page, section: 0)
-        tabbarCollectionView.selectItem(at: selectedIndex, animated: true, scrollPosition: [])
-        tabbarCollectionView.scrollToItem(at: selectedIndex, at: .centeredHorizontally, animated: true)
+        tabbarCollectionView.selectItem(at: selectedIndex, animated: true, scrollPosition: .centeredHorizontally)
         collectionView(tabbarCollectionView, didSelectItemAt: selectedIndex)
     }
 }
