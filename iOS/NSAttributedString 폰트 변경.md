@@ -21,6 +21,8 @@
 > 값 참고 ☑️ [애플 공식 홈페이지](https://developer.apple.com/documentation/uikit/nsunderlinestyle)
 >
 > **.underlineColor** 👉 폰트의 Underline 색상을 지정할 수 있는 Key 값이다. Value 값의 타입은 `UIColor`이다.
+>
+> **.paragraphStyle** 👉 폰트의 행간을 조정할 수 있다. 조정하기 위해 `NSMutableParagraphStyle` 객체를 설정하고 linespacing 조정이 필요하다.
 
 <br>
 
@@ -39,10 +41,13 @@ idTextField.attributedPlaceholder = attributedString
 ✔️ **예제 코드**
 
 ```swift
+let paragraphStyle = NSMutableParagraphStyle()
+paragraphStyle.lineSpacing = 6
+
 textFieldID.attributedText = NSMutableAttributedString(string: "팔로우를 한 후, 멋진 상품을 놓치지말고", attributes: [.font: UIFont(name: "KoPubWorldDotumPM", size: 15)!, .foregroundColor: UIColor.greyishBrown, NSAttributedString.Key.kern: CGFloat(-0.3), 
-.underlineStyle: NSUnderlineStyle.single.rawValue
+.underlineStyle: NSUnderlineStyle.single.rawValue, .paragraphStyle: paragraphStyle])
 // 주의할 점: rawValue로 지정을 해주어야 오류가 나지 않고 설정이 가능하다.
-// 주의할 점: underlineStyle에 관한 값들은 위의 공식 홈페이지 참고                                                                                                     ])
+// 주의할 점: underlineStyle에 관한 값들은 위의 공식 홈페이지 참고                                                                                                    
 ```
 
 <br>

@@ -14,7 +14,13 @@ protocol CustomTabbarDelegate {
 
 class ViewController: UIViewController {
     @IBOutlet weak var customTabbarViews: CustomTabbar!
-    @IBOutlet weak var contentCollectionView: UICollectionView!
+    @IBOutlet weak var contentCollectionView: UICollectionView! {
+        didSet {
+            if let layout = contentCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+                layout.itemSize = CGSize(width: <#T##CGFloat#>, height: <#T##CGFloat#>)
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +46,8 @@ extension ViewController: UICollectionViewDataSource {
         contentCell.setIndex(indexPath.row)
         return contentCell
     }
+    
+    
 }
 
 extension ViewController: UICollectionViewDelegate {
