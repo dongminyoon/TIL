@@ -16,9 +16,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var customTabbarViews: CustomTabbar!
     @IBOutlet weak var contentCollectionView: UICollectionView! {
         didSet {
-            if let layout = contentCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-                layout.itemSize = CGSize(width: <#T##CGFloat#>, height: <#T##CGFloat#>)
-            }
+//            if let layout = contentCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+//                layout.itemSize = CGSize(width: <#T##CGFloat#>, height: <#T##CGFloat#>)
+//            }
         }
     }
     
@@ -46,8 +46,6 @@ extension ViewController: UICollectionViewDataSource {
         contentCell.setIndex(indexPath.row)
         return contentCell
     }
-    
-    
 }
 
 extension ViewController: UICollectionViewDelegate {
