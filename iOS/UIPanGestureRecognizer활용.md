@@ -46,5 +46,9 @@ let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selecto
 }
 ```
 
+<br>
+
+🔴 **PanGestureRecognizer 활용 Panel View 구현 추가 예정**
+
 
 
