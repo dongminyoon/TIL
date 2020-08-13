@@ -51,3 +51,43 @@
  KeyChain을 사용하면 핸드폰이 공정초기화가 되기 전까지 핸드폰 내에서 중요한 정보들을 저장할 수 있습니다. 이를 위해, 간단하게 사용할 수 있는 라이브러리가 있어 사용해보았습니다.
 
 👉 `SwiftKeyChainWrapper`
+
+<br>
+
+<br>
+
+---
+
+***KeyChain이란?***
+
+ ***KeyChain***을 사용하기 위해서는 **Security Framework**을 이용하면 해당 기능들을 사용할 수 있다. 보통 **Security Frmawork**을 사용하는 경우는 어떤 정보를 Network을 통해서 저장하는 경우에는 적합하지 않다. 더 낮은 레벨의 보안 접근이 필요할 때 사용하는 방법이다.
+
+ ***KeyChain***을 사용하면 암호화와 복호화 작업을 개발자가 직접 작성하지 않고 쉽게 사용할 수 있도록 제공하고 있습니다. 보통 암호 등을 저장하지만 이 외에 카드 정보, 짧은 기록 등을 저장하기 위해서도 사용될 수 있습니다. 이렇게 저장되는 것들을 **KeyChain Items**라고 합니다.
+
+ iOS App에서 자신의 **KeyChain Items**에만 접근할 수 있습니다. 그러나 App들이 같은 그룹에 속해있으면 공유할 수 있습니다.
+
+<img src="../images/keychain.png">
+
+<br>
+
+✔️ **사용 절차**
+
+ 처음 사용을 위해 진행 방향이 한 눈에 알아볼 수 있게 표시된 그림을 가져왔다.
+
+<img src="../images/usingkeychain.png">
+
+ 세부적인 사용을 위해서 우선 Query문을 작성해서 해당 **Key: Value**에 맞게 값을 저장하고 찾아오는 작업이 사전에 필요했다.
+
+* 아이템 더하기 - `SecItemAdd(_:_:)` 메소드 사용
+* 아이템 찾기 - `SecItemCopyMatching(_:_:)` 메소드 사용
+
+<br>
+
+ 자세한 사용에 대해서는 Apple 개발자 문서를 참고하면 될 것 같다.
+
+---
+
+✔️ 참고 레퍼런스
+
+- [Adding a Password to the Keychain](https://developer.apple.com/documentation/security/keychain_services/keychain_items/adding_a_password_to_the_keychain)
+- [Searching for Keychain Items](https://developer.apple.com/documentation/security/keychain_services/keychain_items/searching_for_keychain_items)
