@@ -138,6 +138,6 @@ class CustomTabbar: UIView {
 
 <br>
 
-✔️ **완성 화면**
+✔️ **완성 화면**
 
  <center><img src="../../images/customTabbar.gif" height="400px"></center>
