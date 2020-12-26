@@ -70,6 +70,7 @@ func removeParentView() {
   self.view.removeFromSuperView()
 }
 ```
+<br>
 
 
 
